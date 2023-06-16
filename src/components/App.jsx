@@ -6,7 +6,7 @@ import { AiFillContacts, AiFillBook } from 'react-icons/ai';
 import 'react-toastify/dist/ReactToastify.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { fetchContacts } from 'redux/operations';
+import { fetchContacts } from 'redux/auth/operations';
 import { getIsLoading, getError } from 'redux/selectors';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { Loader } from './Loader/Loader';
