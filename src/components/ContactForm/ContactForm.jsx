@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getContacts } from 'redux/contacts/selectors';
 import { addContact } from 'redux/contacts/operations';
 import { nanoid } from 'nanoid';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import {
   ContainerForm,
   Input,
@@ -100,7 +100,6 @@ export const ContactForm = () => {
           </ContainerForm>
         )}
       </Formik>
-      <ToastContainer />
     </>
   );
 };
