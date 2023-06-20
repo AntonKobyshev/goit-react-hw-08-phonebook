@@ -44,7 +44,7 @@ export const LoginForm = () => {
     <Formik initialValues={initialValues} onSubmit={handleSubmit} validationSchema={loginSchema}>
       {({ errors, touched }) => (
         <FormContainer>
-          <Title>Log in to continue</Title>
+          <Title>Please log in to continue</Title>
                     <InputWrapper>
             <Label htmlFor="email">Email:</Label>
             <Input
