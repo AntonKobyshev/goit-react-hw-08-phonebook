@@ -9,15 +9,21 @@ import { ContactsPage } from 'pages/Contacts';
 import { refreshUser } from 'redux/auth/operations';
 import { RestrictedRoute } from './RestrictedRoute';
 import { PrivateRoute } from './PrivateRoute';
+import { useRefreshUser  } from '../hooks/useAuth';
+import { Loader } from './Loader/Loader';
+
 
 export const App = () => {
   const dispatch = useDispatch();
+  const isRefreshing = useRefreshUser();
 
   useEffect(() => {
     dispatch(refreshUser());
   }, [dispatch]);
 
-  return (
+  return isRefreshing ? (
+    <Loader/>
+  ) : (
     <>
       <Routes>
         <Route path="/" element={<Layout />}>

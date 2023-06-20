@@ -4,6 +4,7 @@ import { AppBar } from '../AppBar/AppBar';
 import { Container } from 'components/App.styled';
 import { Main, Wrapper } from './Layout.styled';
 import { Background } from 'components/Background/Background';
+import { Loader } from '../Loader/Loader';
 
 export const Layout = () => {
   return (
@@ -12,7 +13,7 @@ export const Layout = () => {
       <Main>
         <Container>
           <Wrapper>
-            <Suspense fallback={null}>
+            <Suspense fallback={<Loader />}>
               <Outlet />
             </Suspense>
           </Wrapper>
