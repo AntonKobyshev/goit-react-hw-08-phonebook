@@ -1,5 +1,8 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import { toast } from "react-toastify";
+
+axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
 
 const setAuthHeader = token => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
@@ -16,7 +19,7 @@ export const register = createAsyncThunk('auth/register', async (credentials, th
 
     return data;
   } catch (error) {
-    return thunkAPI.rejectWithValue(error.message);
+    return thunkAPI.rejectWithValue(toast.error(error.message));
   }
 });
 
@@ -27,7 +30,7 @@ export const logIn = createAsyncThunk('auth/login', async (credentials, thunkAPI
 
     return data;
   } catch (error) {
-    return thunkAPI.rejectWithValue(error.message);
+    return thunkAPI.rejectWithValue(toast.error(error.message));
   }
 });
 
@@ -37,7 +40,7 @@ export const logOut = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
 
     clearAuthHeader();
   } catch (error) {
-    return thunkAPI.rejectWithValue(error.message);
+    return thunkAPI.rejectWithValue(toast.error(error.message));
   }
 });
 
@@ -51,6 +54,6 @@ export const refreshUser = createAsyncThunk('auth/refresh', async (_, thunkAPI) 
     const { data } = await axios.get('users/current');
     return data;
   } catch (error) {
-    return thunkAPI.rejectWithValue(error.message);
+    return thunkAPI.rejectWithValue(toast.error(error.message));
   }
 });

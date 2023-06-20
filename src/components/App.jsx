@@ -11,6 +11,7 @@ import { RestrictedRoute } from './RestrictedRoute';
 import { PrivateRoute } from './PrivateRoute';
 import { useRefreshUser  } from '../hooks/useAuth';
 import { Loader } from './Loader/Loader';
+import { ToastContainer } from "react-toastify";
 
 
 export const App = () => {
@@ -41,7 +42,8 @@ export const App = () => {
             element={<PrivateRoute component={ContactsPage} redirectTo="/login" />}
           />
         </Route>
-      </Routes>
+        </Routes>
+        <ToastContainer autoClose={3000}/>
     </>
   );
 };
