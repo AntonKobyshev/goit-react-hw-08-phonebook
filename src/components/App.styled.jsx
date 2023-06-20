@@ -1,45 +1,69 @@
 import styled from '@emotion/styled';
 
+const size = {
+  mobile: '320px',
+  tablet: '768px',
+};
+
+export const device = {
+  mobile: `(min-width: ${size.mobile})`,
+  tablet: `(min-width: ${size.tablet})`,
+};
+
 export const Container = styled.div`
-  margin: 40px auto;
-  padding: 20px;
+  margin: 0 auto;
+  padding: 0 15px;
+  max-width: 850px;
+`;
 
-  max-width: 600px;
-
-  text-align: center;
-
-  box-shadow: var(--main-shadow);
-  border-radius: 8px;
+export const Wrapper = styled.div`
+  display: flex;
 `;
 
 export const Title = styled.h1`
-  display: flex;
-  gap: 20px;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
+  margin-bottom: 24px;
+  font-size: 32px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.5);
 
-  margin-bottom: 20px;
-
-  font-size: 36px;
-  color: var(--accent);
-
-  box-shadow: var(--main-shadow);
-  border-radius: 8px;
+  @media ${device.tablet} {
+    font-size: 44px;
+  }
 `;
 
 export const Subtitle = styled.h2`
-  display: flex;
-  gap: 20px;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-
   margin-bottom: 20px;
-
-  font-size: 36px;
-  color: var(--accent);
-
-  box-shadow: var(--main-shadow);
-  border-radius: 8px;
+  text-align: center;
+  font-size: 32px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.6);
 `;
+
+export const Paragraph = styled.p`
+  margin-bottom: 25px;
+
+  font-size: 18px;
+  line-height: 1.8;
+  color: rgba(47, 47, 47, 0.6);
+`;
+
+export const Info = styled.p`
+  text-align: end;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.5);
+`;
+
+export const InfoLink = styled.a`
+  position: relative;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.7);
+  text-decoration: none;
+  transition: all 250ms ease-in-out;
+  :hover,
+  :focus {
+    color: rgba(0, 128, 0, 1);
+  }
+`;
+

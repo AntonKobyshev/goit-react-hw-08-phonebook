@@ -1,17 +1,10 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { getContactFilter, getContacts } from 'redux/selectors';
-import { deleteContact } from 'redux/auth/operations';
-import {
-  Btn,
-  Contacts,
-  ContactsItem,
-  Name,
-  Number,
-} from './ContactList.styled';
-import { IoPersonRemove } from 'react-icons/io5';
+import { useSelector } from 'react-redux';
+import { getContacts } from 'redux/contacts/selectors';
+import { getContactFilter } from 'redux/filter/selectors'; 
+import { ContactItem } from 'components/ContactItem/ContactItem';
+import { Contacts} from './ContactList.styled';
 
 export const ContactList = () => {
-  const dispatch = useDispatch();
   const contacts = useSelector(getContacts);
   const filter = useSelector(getContactFilter);
   const filteredContacts = contacts.filter(contact =>
@@ -20,17 +13,11 @@ export const ContactList = () => {
 
   return (
     <>
+
       <Contacts>
-        {filteredContacts.map(({ id, name, phone }) => {
+        {filteredContacts.map(({ id, name, number }) => {
           return (
-            <ContactsItem key={id}>
-              <Name>{name}</Name>
-              <Number>{phone}</Number>
-              <Btn type="button" onClick={() => dispatch(deleteContact(id))}>
-                <IoPersonRemove size="16" />
-                Delete
-              </Btn>
-            </ContactsItem>
+            <ContactItem key={id} id={id} name={name} number={number} />
           );
         })}
       </Contacts>
