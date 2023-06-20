@@ -5,10 +5,13 @@ import { Filter } from 'components/Filter/Filter';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { fetchContacts } from 'redux/contacts/operations';
+import { useRefreshUser  } from '../hooks/useAuth';
+import { Loader } from '../components/Loader/Loader';
 
 export const ContactsPage = () => {
   const dispatch = useDispatch();
-
+  const isRefreshing = useRefreshUser();
+  
   useEffect(() => {
     dispatch(fetchContacts());
   }, [dispatch]);
@@ -20,7 +23,7 @@ export const ContactsPage = () => {
 
       <Subtitle>List of contacts</Subtitle>
       <Filter />
-      <ContactList />
+      {isRefreshing ? <Loader /> : <ContactList />}
     </>
   );
 };

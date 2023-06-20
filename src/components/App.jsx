@@ -9,22 +9,17 @@ import { ContactsPage } from 'pages/Contacts';
 import { refreshUser } from 'redux/auth/operations';
 import { RestrictedRoute } from './RestrictedRoute';
 import { PrivateRoute } from './PrivateRoute';
-import { useRefreshUser  } from '../hooks/useAuth';
-import { Loader } from './Loader/Loader';
 import { ToastContainer } from "react-toastify";
 
 
 export const App = () => {
   const dispatch = useDispatch();
-  const isRefreshing = useRefreshUser();
 
   useEffect(() => {
     dispatch(refreshUser());
   }, [dispatch]);
 
-  return isRefreshing ? (
-    <Loader/>
-  ) : (
+  return (
     <>
       <Routes>
         <Route path="/" element={<Layout />}>
