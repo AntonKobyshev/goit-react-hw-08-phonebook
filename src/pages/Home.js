@@ -10,8 +10,8 @@ export const HomePage = () => {
       <Title>Welcome to the Phonebook application!</Title>
       <Paragraph>
         Here you can conveniently store and manage your contacts. Our
-        application provides a simple and intuitive interface for adding,
-        editing, and deleting contacts. You will be able to easily find the
+        application provides a simple and intuitive interface for adding
+        and deleting contacts. You will be able to easily find the
         desired contacts using the search function by name. We value your
         privacy and ensure the security of your data. All contacts are stored on
         our database, and we do not share them with third parties. We hope that
