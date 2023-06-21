@@ -16,7 +16,7 @@ export const register = createAsyncThunk('auth/register', async (credentials, th
   try {
     const { data } = await axios.post('/users/signup', credentials);
     setAuthHeader(data.token);
-
+    toast.info('You have successfully registered and logged in!')
     return data;
   } catch (error) {
     return thunkAPI.rejectWithValue(toast.error('Something went wrong'));
