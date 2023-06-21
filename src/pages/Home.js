@@ -23,7 +23,7 @@ export const HomePage = () => {
         <Paragraph>
           To get started, please <AuthItem to={'/register'}>Register</AuthItem>{' '}
           or <AuthItem to={'/login'}>Log in</AuthItem> to your account. Once
-          authenticated, you can add, edit, and delete contacts as you wish.
+          authenticated, you can find, add, and delete contacts as you wish.
         </Paragraph>
       )}
 
