@@ -10,7 +10,7 @@ import { refreshUser } from 'redux/auth/operations';
 import { RestrictedRoute } from './RestrictedRoute';
 import { PrivateRoute } from './PrivateRoute';
 import { ToastContainer } from "react-toastify";
-
+import { NotFoundPage } from '../pages/PageNotFound';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -36,6 +36,7 @@ export const App = () => {
             path="/contacts"
             element={<PrivateRoute component={ContactsPage} redirectTo="/login" />}
           />
+          <Route path="*" element={<NotFoundPage />} />
         </Route>
         </Routes>
         <ToastContainer autoClose={3000}/>

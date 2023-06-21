@@ -87,11 +87,14 @@ export const Btn = styled.button`
 export const ErrorMsg = styled(ErrorMessage)`
   font-size: 14px;
   color: rgba(255, 0, 0, 1);
+  max-width: 300px;
+  
 `;
 
 export const PassWrapper = styled.div`
   position: relative;
   width: 100%;
+ 
 `;
 
 export const ShowPassBtn = styled.button`

@@ -5,7 +5,7 @@ export const Background = () => {
   return createPortal(
     <BackgroundContainer>
       <>
-        {Array.from({ length: 50 }, (_, index) => (
+        {Array.from({ length: 30 }, (_, index) => (
           <BackgroundItem key={index} />
         ))}
       </>

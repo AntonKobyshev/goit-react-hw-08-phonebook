@@ -8,7 +8,7 @@ export const registerSchema = Yup.object().shape({
   password: Yup.string()
     .min(5)
     .matches(passwordRules, {
-      message: 'Please create a stronger password',
+      message: 'The password must contain at least one digit, one lowercase letter and one uppercase letter',
     })
     .required('Required'),
 });

@@ -37,7 +37,7 @@ export const RegisterForm = () => {
       })
     );
 
-    resetForm();
+    // resetForm();
   };
 
   const togglePassword = () => setPasswordShown(!passwordShown);
@@ -57,7 +57,7 @@ export const RegisterForm = () => {
               placeholder={' '}
               data-error={errors.username && touched.username ? true : false}
             />
-            <ErrorMsg name="username" component="span" />
+            <ErrorMsg name="username" component="div" />
           </InputWrapper>
 
           <InputWrapper>
