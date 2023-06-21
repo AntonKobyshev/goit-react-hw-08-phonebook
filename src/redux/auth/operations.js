@@ -27,7 +27,7 @@ export const logIn = createAsyncThunk('auth/login', async (credentials, thunkAPI
   try {
     const { data } = await axios.post('users/login', credentials);
     setAuthHeader(data.token);
-
+    toast.info('You have successfully logged in!') 
     return data;
   } catch (error) {
     return thunkAPI.rejectWithValue(toast.error('Something went wrong'));
@@ -37,7 +37,7 @@ export const logIn = createAsyncThunk('auth/login', async (credentials, thunkAPI
 export const logOut = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
   try {
     await axios.post('users/logout');
-
+    toast.info('You have successfully logged out!')
     clearAuthHeader();
   } catch (error) {
     return thunkAPI.rejectWithValue(toast.error('Something went wrong'));
